@@ -4,11 +4,11 @@ import VolunteerHero from "../components/VolunteerHero";
 import CTA from "../components/CTA";
 import DeftForm from "../components/DeftForm";
 
-function Volunteer({ onVisit }) {
+function Volunteer({ onVisit, onRegister }) {
 
   return (
     <main className="bg-white">
-      <VolunteerHero />
+      <VolunteerHero onRegister={onRegister} />
 
       {/* Why Volunteer Section */}
       <section className="py-12 md:py-24 bg-white overflow-hidden">
@@ -105,12 +105,12 @@ function Volunteer({ onVisit }) {
                 ))}
               </div>
               <div className="mt-16 relative z-10">
-                <Link
-                  to="/contact#contact-form"
+                <button
+                  onClick={onRegister}
                   className="px-10 py-5 bg-amber-500 text-stone-900 rounded-2xl font-bold text-lg hover:bg-amber-400 transition-all hover:scale-105 shadow-xl shadow-amber-900/10 inline-block"
                 >
                   Apply to Register Now
-                </Link>
+                </button>
               </div>
           </div>
         </div>
@@ -214,7 +214,7 @@ function Volunteer({ onVisit }) {
                          <div className="flex items-center gap-2">
                             <p className="text-stone-500 text-xs font-medium tracking-wide uppercase">Training Program</p>
                             <span className="h-px w-0 group-hover:w-8 bg-amber-500/50 transition-all duration-500"></span>
-                            <span className="text-amber-500 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">APPLY</span>
+                            <span className="text-amber-500 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity" onClick={onRegister}>APPLY</span>
                          </div>
                       </div>
                     ))}

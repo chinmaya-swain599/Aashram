@@ -2,7 +2,7 @@ import React from "react";
 import CTA from "../components/CTA";
 import DeftForm from "../components/DeftForm";
 
-const Contact = () => {
+const Contact = ({ onVisit }) => {
 
   return (
     <main className="bg-white">
@@ -90,7 +90,7 @@ const Contact = () => {
 
               {/* Form Body */}
               <div className="bg-white px-8 py-8 min-h-[600px] text-stone-900">
-                <DeftForm />
+                <DeftForm formId="026b37c3-9fdd-4efc-aefd-6b62ecdf2c19" />
               </div>
 
             </div>
@@ -165,7 +165,7 @@ const Contact = () => {
         </div>
       </section>
 
-      <CTA />
+      <CTA onVisitHome={onVisit} />
     </main>
   );
 };

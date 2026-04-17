@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const VolunteerHero = () => {
+const VolunteerHero = ({ onRegister }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Prevent background scroll
@@ -62,12 +62,12 @@ const VolunteerHero = () => {
               await your warmth.
             </p>
             <div className="flex flex-wrap justify-center md:justify-start gap-4">
-              <a
-                href="/contact#contact-form"
+              <button
+                onClick={onRegister}
                 className="px-10 py-5 bg-emerald-500 text-stone-900 rounded-2xl font-bold text-lg hover:bg-emerald-400 transition-all hover:scale-105 shadow-xl shadow-emerald-900/40 inline-block"
               >
                 Apply to Help
-              </a>
+              </button>
             </div>
           </div>
 

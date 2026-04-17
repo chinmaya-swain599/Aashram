@@ -9,20 +9,22 @@ import Contact from "./pages/Contact";
 import ServiceDetail from "./pages/ServiceDetail";
 import DonationModal from "./components/DonationModal";
 import DayInLifeModal from "./components/DayInLifeModal";
+import VolunteerModal from "./components/VolunteerModal";
 
 function App() {
   const location = useLocation();
   const [isDonationModalOpen, setIsDonationModalOpen] = useState(false);
   const [isVisitModalOpen, setIsVisitModalOpen] = useState(false);
+  const [isVolunteerModalOpen, setIsVolunteerModalOpen] = useState(false);
 
   // Prevent background scroll
   useEffect(() => {
-    if (isDonationModalOpen || isVisitModalOpen) {
+    if (isDonationModalOpen || isVisitModalOpen || isVolunteerModalOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
     }
-  }, [isDonationModalOpen, isVisitModalOpen]);
+  }, [isDonationModalOpen, isVisitModalOpen, isVolunteerModalOpen]);
 
   // Handle scrolling on navigation
   useEffect(() => {
@@ -54,6 +56,7 @@ function App() {
 
   const openDonation = () => setIsDonationModalOpen(true);
   const openVisit = () => setIsVisitModalOpen(true);
+  const openVolunteer = () => setIsVolunteerModalOpen(true);
 
   return (
     <>
@@ -62,8 +65,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home onDonate={openDonation} onVisit={openVisit} />} />
         <Route path="/about" element={<About onVisit={openVisit} />} />
-        <Route path="/volunteer" element={<Volunteer onVisit={openVisit} />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/volunteer" element={<Volunteer onVisit={openVisit} onRegister={openVolunteer} />} />
+        <Route path="/contact" element={<Contact onVisit={openVisit} />} />
         <Route path="/services/:slug" element={<ServiceDetail onVisit={openVisit} />} />
       </Routes>
 
@@ -77,6 +80,11 @@ function App() {
       <DayInLifeModal 
         isOpen={isVisitModalOpen} 
         onClose={() => setIsVisitModalOpen(false)} 
+      />
+      
+      <VolunteerModal 
+        isOpen={isVolunteerModalOpen} 
+        onClose={() => setIsVolunteerModalOpen(false)} 
       />
     </>
   );

@@ -258,7 +258,7 @@ const ServiceDetail = ({ onVisit }) => {
 
       {/* CTA Section */}
       <div className="mt-auto">
-        <CTA />
+        <CTA onVisitHome={onVisit} />
       </div>
 
       {/* Navigation Footer */}
