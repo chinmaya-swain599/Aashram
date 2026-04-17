@@ -62,7 +62,7 @@ const VolunteerModal = ({ isOpen, onClose }) => {
       <div className="relative w-full max-w-5xl bg-white rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl flex flex-col md:flex-row animate-in fade-in zoom-in duration-500 max-h-[90vh] md:max-h-none overflow-y-auto md:overflow-visible">
         
         {/* Left Side: Visual & Quote */}
-        <div className="w-full md:w-[40%] relative min-h-[300px] md:min-h-full">
+        <div className="hidden md:block w-full md:w-[40%] relative min-h-[300px] md:min-h-full">
           <img 
             src="/volunteer2.jpeg" 
             alt="Volunteer" 

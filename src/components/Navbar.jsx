@@ -98,7 +98,7 @@ function Navbar() {
                 </Link>
               ))}
 
-              <a href="/contact" className={`px-6 py-2 rounded-xl font-bold transition-all hover:scale-105 active:scale-95 shadow-lg ${
+              <Link to="/contact" className={`px-6 py-2 rounded-xl font-bold transition-all hover:scale-105 active:scale-95 shadow-lg ${
                 location.pathname === "/contact"
                   ? "bg-amber-600 text-white"
                   : isScrolled 
@@ -106,7 +106,7 @@ function Navbar() {
                     : "bg-amber-500 text-stone-900 shadow-amber-500/20 hover:bg-amber-400"
               }`}>
                 Contact Us
-              </a>
+              </Link>
             </div>
 
             {/* Mobile Menu Toggle */}
@@ -144,15 +144,15 @@ function Navbar() {
             </Link>
           ))}
 
-          <a 
-            href="/contact" 
+          <Link 
+            to="/contact" 
             onClick={() => setIsMobileMenuOpen(false)}
             className={`text-2xl font-bold transition-colors ${
               location.pathname === "/contact" ? "text-white underline underline-offset-8" : "text-amber-500 hover:text-white"
             }`}
           >
             Contact Us
-          </a>
+          </Link>
           
           <div className="mt-auto pt-10 border-t border-white/10">
             <p className="text-stone-500 text-sm mb-4 italic font-serif">A Place of Peace & Dignity</p>

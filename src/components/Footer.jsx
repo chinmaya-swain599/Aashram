@@ -39,8 +39,8 @@ function Footer({ onDonate }) {
             <ul className="space-y-4 text-sm">
               <li><Link to="/about" className="hover:text-amber-500 transition-colors">About Us</Link></li>
               <li><Link to="/volunteer" className="hover:text-amber-500 transition-colors">Volunteering</Link></li>
-              <li><a href="/contact#contact-form" className="hover:text-amber-500 transition-colors">Contact Us</a></li>
-              <li><a href="/contact#contact-form" className="hover:text-amber-500 transition-colors">Book a Visit</a></li>
+              <li><Link to="/contact#contact-form" className="hover:text-amber-500 transition-colors">Contact Us</Link></li>
+              <li><Link to="/contact#contact-form" className="hover:text-amber-500 transition-colors">Book a Visit</Link></li>
               <li>
                 <button
                   onClick={onDonate}
